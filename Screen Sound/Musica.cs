@@ -16,7 +16,7 @@
         Console.WriteLine($"Duração: {Duracao}");
         if (Disponivel)
         {
-            Console.WriteLine("Aproveite a música");
+            Console.WriteLine("Aproveite a música!");
         }
         else
         {
