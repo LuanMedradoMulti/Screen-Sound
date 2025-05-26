@@ -1,137 +1,140 @@
-﻿//Screen Sound
-//C# É fortemente tipada
+﻿using ScreenSound.Modelos;
+//Screen Sound
+Banda queen = new Banda ("Queen");
 
-//string mensagemDeBoasVindas = "********* SCREEN SOUND APP *********\n";
-//List<string> ListaDasBandas = new List<string> { "Beatles" };
-//Dictionary<string, List<int>> BandasRegistradas = new Dictionary<string, List<int>>();
-//BandasRegistradas.Add("soad", new List<int> { 10, 07, 08 });
-//void ExibirLogo()
-//{
-//    Console.WriteLine(mensagemDeBoasVindas);
-//}
+string mensagemDeBoasVindas = "********* screen sound app *********\n";
+List<string> Listadasbandas = new List<string> { "beatles" };
+Dictionary<string, Banda> bandasregistradas = new);
+bandasregistradas.Add(queen.Nome, queen);
+void ExibirLogo()
+{
+    Console.WriteLine(mensagemDeBoasVindas);
+}
 
-//void ExibirOpcoesDoMenu()
-//{
-//    ExibirLogo();
-//    Console.WriteLine("Digite 1 para registrar uma banda");
-//    Console.WriteLine("Digite 2 para mostrar todas as bandas");
-//    Console.WriteLine("Digite 3 para avaliar uma banda");
-//    Console.WriteLine("Digite 4 para exibir a média de nota de uma banda");
-//    Console.WriteLine("Digite -1 para sair\n");
+void ExibirOpcoesmenu()
+{
+    ExibirLogo();
+    Console.WriteLine("digite 1 para registrar uma banda");
+    Console.WriteLine("digite 2 para mostrar todas as bandas");
+    Console.WriteLine("digite 3 para avaliar uma banda");
+    Console.WriteLine("digite 4 para exibir a média de nota de uma banda");
+    Console.WriteLine("digite -1 para sair\n");
 
-//    Console.Write("Digite a sua opção:");
-//    string opcaoEscolhida = Console.ReadLine()!;
-//    int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
+    Console.Write("digite a sua opção:");
+    string opcaoescolhida = Console.ReadLine()!;
+    int opcaoescolhidanumerica = int.Parse(opcaoescolhida);
 
-//    switch (opcaoEscolhidaNumerica)
-//    {
-//        case 1:
-//            RegistrarBanda();
-//            break;
-//        case 2:
-//            ExibirTodasAsBandas();
-//            break;
-//        case 3:
-//            AvaliarBanda();
-//            break;
-//        case 4:
-//            ExibirMediaBanda();
-//            break;
-//        case -1:
-//            Console.WriteLine("Tchau!");
-//            break;
-//        default:
-//            Console.WriteLine("Opcão incorreta");
-//            break;
-//    }
-//}
+    switch (opcaoescolhidanumerica)
+    {
+        case 1:
+            Registrarbanda();
+            break;
+        case 2:
+            ExibirTodasBandas();
+            break;
+        case 3:
+            AvaliarBanda();
+            break;
+        case 4:
+            ExibirMediaBanda();
+            break;
+        case -1:
+            Console.WriteLine("tchau!");
+            break;
+        default:
+            Console.WriteLine("opcão incorreta");
+            break;
+    }
+}
 
-//void RegistrarBanda()
-//{
-//    Console.Clear();
-//    ExibirLogo();
-//    Console.WriteLine("Registro de bandas\n");
-//    Console.Write("Digite o nome da banda que deseja registrar: ");
-//    string nomeDaBanda = Console.ReadLine()!;
-//    BandasRegistradas.Add(nomeDaBanda, new List<int>());
-//    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!\n");
-//    Thread.Sleep(1000);
-//    Console.Clear();
-//    ExibirOpcoesDoMenu();
-//}
+void Registrarbanda()
+{
+    Console.Clear();
+    ExibirLogo();
+    Console.WriteLine("registro de bandas\n");
+    Console.Write("digite o nome da banda que deseja registrar: ");
+    string nomedabanda = Console.ReadLine()!;
+    bandasregistradas.Add(nomedabanda, new List<int>());
+    Console.WriteLine($"a banda {nomedabanda} foi registrada com sucesso!\n");
+    Thread.Sleep(1000);
+    Console.Clear();
+    ExibirOpcoesmenu();
+}
 
-//void ExibirTodasAsBandas()
-//{
-//    Console.Clear();
-//    ExibirLogo();
-//    Console.WriteLine("Exibindo todas as bandas registradas: \n");
-//    for (int i = 0; i < ListaDasBandas.Count; i++)
-//    {
-//        Console.WriteLine($"Banda: {ListaDasBandas[i]}\n");
-//    }
-//    foreach (string banda in BandasRegistradas.Keys)
-//    {
-//        Console.WriteLine($"Banda: {banda}\n");
-//    }
+void ExibirTodasBandas()
+{
+    Console.Clear();
+    ExibirLogo();
+    Console.WriteLine("exibindo todas as bandas registradas: \n");
+    for (int i = 0; i < Listadasbandas.Count; i++)
+    {
+        Console.WriteLine($"banda: {Listadasbandas[i]}\n");
+    }
+    foreach (string banda in bandasregistradas.Keys)
+    {
+        Console.WriteLine($"banda: {banda}\n");
+    }
 
-//    Console.WriteLine("Digite qualquer tecla para voltar ao menu principal");
-//    Console.ReadKey();
-//    Console.Clear();
-//    ExibirOpcoesDoMenu();
-//}
+    Console.WriteLine("digite qualquer tecla para voltar ao menu principal");
+    Console.ReadKey();
+    Console.Clear();
+    ExibirOpcoesmenu();
+}
 
-//void AvaliarBanda()
-//{
-//    Console.Clear();
-//    ExibirLogo();
-//    Console.Write("Digite o nome da banda que deseja avaliar: ");
-//    string nomeDaBanda = Console.ReadLine()!;
-//    if (BandasRegistradas.ContainsKey(nomeDaBanda))
-//    {
-//        Console.WriteLine($"Dê uma nota para a banda {nomeDaBanda}:");
-//        int nota = int.Parse(Console.ReadLine()!);
-//        BandasRegistradas[nomeDaBanda].Add(nota);
-//        Console.WriteLine($"A nota {nota} foi registrada com sucesso para a banda {nomeDaBanda}!");
-//        Thread.Sleep(1000);
-//        Console.Clear();
-//        ExibirOpcoesDoMenu();
+void AvaliarBanda()
+{
+    Console.Clear();
+    ExibirLogo();
+    Console.WriteLine("digite o nome da banda que deseja avaliar: ");
+     nomedabanda = Console.ReadLine()!;
+    if (bandasregistradas.ContainsKey(nomedabanda))
+    {
+        Console.WriteLine($"dê uma nota para a banda {nomedabanda}:");
+        int nota = int.Parse(Console.ReadLine()!);
+        bandasregistradas[nomedabanda].Add(nota);
+        Console.WriteLine($"a nota {nota} foi registrada com sucesso para a banda {nomedabanda}!");
+        Thread.Sleep(1000);
+        Console.Clear();
+        ExibirOpcoesmenu();
 
-//    }
-//    else
-//    {
-//        Console.WriteLine($"A banda {nomeDaBanda} não foi encontrada!\n");
-//        Console.WriteLine("\nDigite uma tecla para retornar ao menu principal");
-//        Console.ReadKey();
-//        Console.Clear();
-//        ExibirOpcoesDoMenu();
-//    }
+    }
+    else
+    {
+        Console.WriteLine($"a banda {nomedabanda} não foi encontrada!\n");
+        Console.WriteLine("\ndigite uma tecla para retornar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesmenu();
+    }
 
-//}
+}
 
-//void ExibirMediaBanda()
-//{
-//    Console.Clear();
-//    ExibirLogo();
-//    Console.WriteLine("Qual banda deseja consultar a média das notas?");
-//    string nomeDaBanda = Console.ReadLine()!;
-//    if (BandasRegistradas.ContainsKey(nomeDaBanda))
-//    {
-//        List<int> notasDaBanda = BandasRegistradas[nomeDaBanda];
-//        Console.WriteLine($"A média de notas da banda {nomeDaBanda} é {notasDaBanda.Average()}");
-//        Console.WriteLine("Digite uma tecla para retornar ao menu principal");
-//        Console.ReadKey();
-//        Console.Clear();
-//        ExibirOpcoesDoMenu();
+void ExibirMediaBanda()
+{
+    Console.Clear();
+    ExibirLogo();
+    Console.WriteLine("qual banda deseja consultar a média das notas?");
+    string nomedabanda = Console.ReadLine()!;
+    if (bandasregistradas.ContainsKey(nomedabanda))
+    {
+        List<int> notasdabanda = bandasregistradas[nomedabanda];
+        Console.WriteLine($"a média de notas da banda {nomedabanda} é {notasdabanda.Average()}");
+        Console.WriteLine("digite uma tecla para retornar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesmenu();
 
-//    }
-//    else
-//    {
-//        Console.WriteLine("Banda não encontrada!");
-//        Thread.Sleep(1000);
-//        Console.Clear();
-//        ExibirOpcoesDoMenu();
+    }
+    else
+    {
+        Console.WriteLine("banda não encontrada!");
+        Thread.Sleep(1000);
+        Console.Clear();
+        ExibirOpcoesmenu();
 
-//    }
+    }
 
-//}
-//ExibirOpcoesDoMenu();
+}
+
+
+ExibirOpcoesmenu();

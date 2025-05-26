@@ -1,8 +1,15 @@
-﻿class Musica // Classe
+﻿namespace ScreenSound.Modelos;
+class Musica // Classe
 {
     // tipos primitivos
-    public string? Nome { get; set; } // Leitura e escrita
-    public string? Artista { get; set; }
+    public Musica(Banda artista, string nome)
+    {
+        Artista = artista;
+        Nome = nome;
+  
+    }
+    public string Nome { get; set; } // Leitura e escrita
+    public Banda Artista { get;}
     public int Duracao { get; set; }
     public bool Disponivel { get; set; }
     public string Descricao =>
@@ -16,7 +23,7 @@
         Console.WriteLine($"Duração: {Duracao}");
         if (Disponivel)
         {
-            Console.WriteLine("Aproveite a música!");
+            Console.WriteLine("Aproveite a música!\n");
         }
         else
         {
